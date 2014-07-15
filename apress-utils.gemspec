@@ -11,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{apress-utils}
   spec.description   = %q{apress-utils}
   spec.homepage      = 'https://github.com/abak-press/apress-utils'
-  spec.license       = ''
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -22,6 +21,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'changelogger'
   spec.add_development_dependency 'multipart-post'
 end
