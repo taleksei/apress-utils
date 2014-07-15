@@ -1,0 +1,4 @@
+  - 2014/07/15: fix autoload lib path (bibendi)
+  - 2014/07/15: fix upload gem path (bibendi)
+  - 2014/07/15: fix gemspec (bibendi)
+  - 2014/07/15: first commit (bibendi)
