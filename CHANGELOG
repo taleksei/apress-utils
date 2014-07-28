@@ -1,3 +1,7 @@
+  - 2014/07/28: move extensions from core (bibendi)
+
+v0.0.2
+  - 2014/07/15: Release 0.0.2 (bibendi)
   - 2014/07/15: fix autoload lib path (bibendi)
   - 2014/07/15: fix upload gem path (bibendi)
   - 2014/07/15: fix gemspec (bibendi)
