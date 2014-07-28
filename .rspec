@@ -1,0 +1,6 @@
+--color
+--tty
+--drb
+--format progress
+--order random
+--backtrace

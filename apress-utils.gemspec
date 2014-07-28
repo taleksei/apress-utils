@@ -18,6 +18,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'rails', '~> 3.1.12'
+  spec.add_runtime_dependency 'authlogic', '~> 3.2.0'
+  spec.add_runtime_dependency 'pg'
+  spec.add_runtime_dependency 'addressable'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
@@ -25,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'changelogger'
   spec.add_development_dependency 'multipart-post'
+  spec.add_development_dependency 'combustion', '>= 0.5.2'
 end

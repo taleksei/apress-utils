@@ -1,0 +1,6 @@
+test:
+  adapter:  postgresql
+  database: ci
+  username: postgres
+  host: 127.0.0.1
+  prepared_statements: false
