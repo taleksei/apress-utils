@@ -1,3 +1,7 @@
+  - 2014/07/29: fix postgres patches (bibendi)
+
+v0.1.0
+  - 2014/07/28: Release 0.1.0 (bibendi)
   - 2014/07/28: move extensions from core (bibendi)
 
 v0.0.2
