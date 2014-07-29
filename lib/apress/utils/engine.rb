@@ -11,7 +11,7 @@ module Apress
     class Engine < ::Rails::Engine
       config.autoload_paths += Dir["#{config.root}/lib/"]
 
-      config.after_initialize do
+      config.before_initialize do
         cd = File.dirname(__FILE__)
         require cd + '/extensions/active_record/postgresql_patches'
         require cd + '/extensions/rails_patches'
