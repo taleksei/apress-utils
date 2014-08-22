@@ -18,7 +18,7 @@ module Apress::Utils::Extensions::ActiveRecord::Deferrable
   def transaction_with_deferred_constraints_on(column_name, options = {})
     transaction(options) do
       constraints = deferrable_uniqueness_constraints_on(column_name).join ","
-      connection.execute("SET CONSTRAINTS %s DEFERRED" % constraints)
+      connection.execute("SET CONSTRAINTS %s DEFERRED" % constraints) if constraints.present?
       yield
     end
   end
