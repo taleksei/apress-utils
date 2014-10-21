@@ -1,6 +1,6 @@
 # Apress::Utils
 
-
+[![Dolly](http://dolly.railsc.ru/badges/abak-press/apress-utils/master)](http://dolly.railsc.ru/projects/37/builds/latest/?ref=master)
 
 ## Gem Releasing
 
