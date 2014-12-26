@@ -22,7 +22,6 @@ module Apress
         ActionView::Helpers::FormBuilder.send          :include, ::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder
         ActionView::Resolver.send                      :include, ::Apress::Utils::Extensions::ActionView::ResolverSortLocals
 
-        ActionDispatch::Routing::Mapper.send           :include, ::Apress::Utils::Extensions::ActionDispatch::Routing::Mapper
         ActionDispatch::Routing::Mapper.send           :include, ::Apress::Utils::Extensions::ActionDispatch::RoutesLoader
 
         ActiveRecord::Migration.send                   :include, ::Apress::Utils::Extensions::ActiveRecord::Migration
