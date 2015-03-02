@@ -1,5 +1,10 @@
 
 #### [Current]
+ * 2015-03-02 [247e189](../../commit/247e189) - __(Korotaev Danil)__ chore(cleanup): remove dependency apress-gems
+ * 2015-03-02 [3945f1b](../../commit/3945f1b) - __(Korotaev Danil)__ chore(all): appraisal for rails 3.1, 3.2
+
+#### v0.3.0
+ * 2014-12-26 [77ea4b1](../../commit/77ea4b1) - __(Michael Sogomonyan)__ Release 0.3.0
  * 2014-12-25 [0aabd7f](../../commit/0aabd7f) - __(Michael Sogomonyan)__ refactor(extensions): remove ActionDispatch::Routing::Mapper extension (goes to apress-application)
 
 #### v0.2.0
