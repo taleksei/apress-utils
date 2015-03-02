@@ -1,12 +1,13 @@
 RAILS_ENV = test
 BUNDLE = RAILS_ENV=${RAILS_ENV} bundle
 BUNDLE_OPTIONS = -j 2
-RSPEC = rspec
+RSPEC = ${APPRAISAL} rspec
+APPRAISAL = ${BUNDLE} exec appraisal
 
 all: test
 
-test: config/database bundler/install
-	${BUNDLE} exec ${RSPEC} spec 2>&1
+test: config/database bundler/install appraisal/install
+	${RSPEC} spec 2>&1
 
 config/database:
 	touch spec/internal/config/database.yml
@@ -22,3 +23,6 @@ bundler/install:
 	  gem install bundler; \
 	fi
 	${BUNDLE} install ${BUNDLE_OPTIONS}
+
+appraisal/install:
+	${APPRAISAL} install
