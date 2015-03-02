@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'apress/utils/version'
 
 Gem::Specification.new do |spec|
+  spec.metadata['allowed_push_host'] = 'https://gems.railsc.ru'
   spec.name          = 'apress-utils'
   spec.version       = Apress::Utils::VERSION
   spec.authors       = ['Merkushin']
@@ -26,7 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-rails'
-  spec.add_development_dependency 'apress-gems', '>= 0.0.4'
   spec.add_development_dependency 'combustion', '>= 0.5.2'
   spec.add_development_dependency 'appraisal'
 end
