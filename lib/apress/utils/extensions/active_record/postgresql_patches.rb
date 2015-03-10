@@ -58,7 +58,7 @@ module Apress
 
             begin
               execute add_column_sql
-            rescue ActiveRecord::StatementInvalid => e
+            rescue ::ActiveRecord::StatementInvalid => e
               raise e if postgresql_version > 80000
 
               execute("ALTER TABLE #{quote_table_name(table_name)} ADD COLUMN #{quote_column_name(column_name)} #{type_to_sql(type, options[:limit], options[:precision], options[:scale])}")
