@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# coding : utf-8
 module Apress::Utils
   module StringTools
     module CharDet
@@ -105,7 +105,7 @@ module Apress::Utils
     module Sanitizer
       class Base
         require 'sanitize'
-        
+
         TAGS_WITH_ATTRIBUTES = {
           'p'     => ['align', 'style'],
           'div'   => ['align', 'style'],
@@ -132,18 +132,7 @@ module Apress::Utils
           attributes.merge!(attr)
           elements = attributes.keys | TAGS_WITHOUT_ATTRIBUTES
 
-          Sanitize.clean!(str,
-            :attributes => attributes,
-            :elements => elements,
-            :remove_contents => ['style', 'javascript'],
-            :allow_comments => false
-          )
-
-          #Почему-то при первой очистке все что внутри style как комментарий экскейпится и остается. Поэтому делаем unescape и чистим повторно, чтобы наверняка
-          str = CGI::unescapeHTML(str)
-          str = str.slice(0..50*1024) #Пропускаем максимум 50 кбайт.
-
-          Sanitize.clean(str,
+          Sanitize.fragment(str,
             :attributes => attributes,
             :elements => elements,
             :remove_contents => ['style', 'javascript'],
