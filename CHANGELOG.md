@@ -1,5 +1,13 @@
 
 #### [Current]
+ * 2015-03-13 [6bf5470](../../commit/6bf5470) - __(Semyon Pupkov)__ Merge remote-tracking branch 'upstream/master'
+ * 2015-03-11 [6b5896c](../../commit/6b5896c) - __(Semyon Pupkov)__ Remove old changelog file
+ * 2015-03-11 [2a6a13f](../../commit/2a6a13f) - __(Semyon Pupkov)__ Add missing dependencies
+ * 2015-03-11 [0e1a4fe](../../commit/0e1a4fe) - __(Semyon Pupkov)__ Merge remote-tracking branch 'upstream/master'
+ * 2015-03-10 [1e513e5](../../commit/1e513e5) - __(Semyon Pupkov)__ Fix uninitialized constant
+
+#### v0.3.1
+ * 2015-03-02 [a8d8003](../../commit/a8d8003) - __(Korotaev Danil)__ Release 0.3.1
  * 2015-03-02 [247e189](../../commit/247e189) - __(Korotaev Danil)__ chore(cleanup): remove dependency apress-gems
  * 2015-03-02 [3945f1b](../../commit/3945f1b) - __(Korotaev Danil)__ chore(all): appraisal for rails 3.1, 3.2
 
