@@ -135,6 +135,7 @@ module Apress::Utils
           Sanitize.fragment(str,
             :attributes => attributes,
             :elements => elements,
+            :css => {:properties => Sanitize::Config::RELAXED[:css][:properties]},
             :remove_contents => ['style', 'javascript'],
             :allow_comments => false
           )
