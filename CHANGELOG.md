@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2015-04-16 [792ee44](../../commit/792ee44) - __(Semyon Pupkov)__ fix(sanitize): allow all css properties in html
+
+#### v0.3.2
+ * 2015-03-13 [f12a4a0](../../commit/f12a4a0) - __(Semyon Pupkov)__ Release 0.3.2
  * 2015-03-13 [6bf5470](../../commit/6bf5470) - __(Semyon Pupkov)__ Merge remote-tracking branch 'upstream/master'
  * 2015-03-11 [6b5896c](../../commit/6b5896c) - __(Semyon Pupkov)__ Remove old changelog file
  * 2015-03-11 [2a6a13f](../../commit/2a6a13f) - __(Semyon Pupkov)__ Add missing dependencies
