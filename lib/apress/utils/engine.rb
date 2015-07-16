@@ -5,6 +5,7 @@ require 'action_view'
 require 'active_record'
 require 'action_dispatch'
 require 'authlogic'
+require 'string_tools'
 
 module Apress
   module Utils
