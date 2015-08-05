@@ -1,5 +1,10 @@
 
 #### [Current]
+ * 2015-07-18 [cc3074c](../../commit/cc3074c) - __(Sergey D)__ chore: update dependency string_tools
+ * 2015-07-16 [429df1c](../../commit/429df1c) - __(Sergey D)__ feat: move StringTools to gem
+
+#### v0.3.3
+ * 2015-04-16 [30bad21](../../commit/30bad21) - __(Semyon Pupkov)__ Release 0.3.3
  * 2015-04-16 [792ee44](../../commit/792ee44) - __(Semyon Pupkov)__ fix(sanitize): allow all css properties in html
 
 #### v0.3.2
