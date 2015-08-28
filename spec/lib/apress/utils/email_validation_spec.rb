@@ -23,6 +23,6 @@ describe Apress::Utils::EmailValidation do
   end
 
   context 'when email is invalid' do
-    it_behaves_like('invalid email', %w{inv&alidemail@email.com invalid.email@e_mail.com inv#alid-email@email.com envalid$email.com invalid@email})
+    it_behaves_like('invalid email', %w{inv&alidemail@email.com invalid.email@e_mail.com inv#alid-email@email.com envalid$email.com invalid@email invalid@email.96})
   end
 end
