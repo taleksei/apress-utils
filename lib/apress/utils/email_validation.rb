@@ -2,7 +2,7 @@
 
 # Public: Содержит регулярное выражение необходимое для валидации email.
 module Apress::Utils::EmailValidation
-  EMAIL_REGEXP = /\A[a-z0-9\-_]+(?:\.[a-z0-9\-\._]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\Z/i.freeze
+  EMAIL_REGEXP = /\A[a-z0-9\-_]+(?:\.[a-z0-9\-\._]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}\Z/i
 
   def self.regexp
     EMAIL_REGEXP
