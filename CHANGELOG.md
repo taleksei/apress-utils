@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2015-08-28 [c23a9b5](../../commit/c23a9b5) - __(Igor)__ fix: disallow numeric domain in email
+
+#### v1.0.0
+ * 2015-08-05 [9056eb0](../../commit/9056eb0) - __(bibendi)__ Release 1.0.0
  * 2015-07-18 [cc3074c](../../commit/cc3074c) - __(Sergey D)__ chore: update dependency string_tools
  * 2015-07-16 [429df1c](../../commit/429df1c) - __(Sergey D)__ feat: move StringTools to gem
 
