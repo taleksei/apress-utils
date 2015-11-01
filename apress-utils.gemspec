@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'authlogic', '~> 3'
   spec.add_runtime_dependency 'pg'
   spec.add_runtime_dependency 'string_tools', '>= 0.2.0'
+  spec.add_runtime_dependency "redis"
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
@@ -29,4 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'combustion', '>= 0.5.2'
   spec.add_development_dependency 'appraisal'
+  spec.add_development_dependency "mock_redis", ">= 0.14"
+  spec.add_development_dependency "test_after_commit"
+  spec.add_development_dependency "pry-debugger"
 end

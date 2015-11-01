@@ -32,6 +32,23 @@ module Apress
           Authlogic::ActsAsAuthentic::Login::Config.send :include, ::Apress::Utils::Extensions::Authlogic::Login
         end
       end
+
+      initializer "apress-utils", before: :load_init_rb do |app|
+        app.config.query_cache_store = -> { ::Redis.current }
+      end
+
+      config.after_initialize do
+        Rails.cache.class_eval do
+          def clear
+            models = ActiveRecord::Base.
+              descendants.
+              select { |x| x.included_modules.include?(Apress::Utils::Extensions::ActiveRecord::CachedQueries) }
+
+            models.each(&:reset_cached_queries!)
+            super
+          end
+        end
+      end
     end
   end
 end
