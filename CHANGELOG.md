@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2015-11-03 [260dd2b](../../commit/260dd2b) - __(Michail Merkushin)__ fix: misstake in redis specs
+
+#### v1.2.0
+ * 2015-11-03 [6cc8ff1](../../commit/6cc8ff1) - __(Michail Merkushin)__ Release 1.2.0
  * 2015-11-01 [9eed8cc](../../commit/9eed8cc) - __(Michail Merkushin)__ feature: cached queries on redis
 
 #### v1.1.0
