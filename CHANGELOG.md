@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2015-11-01 [9eed8cc](../../commit/9eed8cc) - __(Michail Merkushin)__ feature: cached queries on redis
+
+#### v1.1.0
+ * 2015-08-28 [fc58364](../../commit/fc58364) - __(Semyon Pupkov)__ Release 1.1.0
  * 2015-08-28 [c23a9b5](../../commit/c23a9b5) - __(Igor)__ fix: disallow numeric domain in email
 
 #### v1.0.0
