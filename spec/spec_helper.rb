@@ -21,6 +21,7 @@ require "pry-debugger"
 require "test_after_commit"
 
 RSpec.configure do |config|
+  config.use_transactional_fixtures = true
   config.before do
     Redis.current.flushdb
   end
