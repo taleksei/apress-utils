@@ -15,5 +15,7 @@ require "pry-debugger"
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
-  config.backtrace_exclusion_patterns = [/lib\/rspec\/(core|expectations|matchers|mocks)/]
+  config.before do
+    Rails.cache.clear
+  end
 end
