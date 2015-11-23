@@ -2,28 +2,24 @@ require "spec_helper"
 
 describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
   let(:model) { CachedQuery }
+  let(:model_with_expire) { CachedQueryWithExpire }
 
   it "cache records" do
     model.create name: "test"
     expect(model.first).to be_present
     model.delete_all
     expect(model.first).to be_present
-    Redis.current.flushdb
+    Rails.cache.clear
     expect(model.first).to be_nil
   end
 
-  it "clear cache after destroy" do
-    record = model.create name: "test"
-    expect(model.first).to be_present
-    record.destroy
-    expect(model.first).to be_nil
-  end
-
-  it "clear cache after save" do
-    record = model.create name: "test"
-    expect(model.first).to be_present
-    record.update_attributes(name: "test2")
-    expect(model.first.name).to eq "test2"
+  it "cache records with expires_in" do
+    model_with_expire.create name: "test"
+    expect(model_with_expire.first).to be_present
+    model_with_expire.delete_all
+    expect(model_with_expire.first).to be_present
+    sleep(5)
+    expect(model_with_expire.first).to be_nil
   end
 
   it "clear all caches" do
@@ -34,3 +30,4 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
     expect(model.first).to be_nil
   end
 end
+
