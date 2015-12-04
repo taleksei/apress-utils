@@ -1,5 +1,11 @@
 
 #### [Current]
+ * 2015-11-21 [cc3302f](../../commit/cc3302f) - __(Napolskih)__ feature: back to rails cache, tags removed, expires_in added for cached queries
+ * 2015-11-21 [8367b25](../../commit/8367b25) - __(Napolskih)__ Revert "feature: cached queries on redis"
+ * 2015-11-18 [0924304](../../commit/0924304) - __(Artem Napolskih)__ specs: use transactional fixtures
+
+#### v1.2.1
+ * 2015-11-03 [06b37dc](../../commit/06b37dc) - __(Michail Merkushin)__ Release 1.2.1
  * 2015-11-03 [260dd2b](../../commit/260dd2b) - __(Michail Merkushin)__ fix: misstake in redis specs
 
 #### v1.2.0
