@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2015-12-22 [02ab31a](../../commit/02ab31a) - __(Denis Korobitcin)__ feature(ar_caching) run_without_cache method
+
+#### v1.3.0
+ * 2015-12-04 [c45c2bd](../../commit/c45c2bd) - __(Michail Merkushin)__ Release 1.3.0
  * 2015-11-21 [cc3302f](../../commit/cc3302f) - __(Napolskih)__ feature: back to rails cache, tags removed, expires_in added for cached queries
  * 2015-11-21 [8367b25](../../commit/8367b25) - __(Napolskih)__ Revert "feature: cached queries on redis"
  * 2015-11-18 [0924304](../../commit/0924304) - __(Artem Napolskih)__ specs: use transactional fixtures
