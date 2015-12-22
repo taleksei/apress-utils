@@ -13,6 +13,8 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
 
     module ClassMethods
       def find_by_sql(sql, binds = [])
+        return super if @without_cache
+
         binds_key = binds.map { |x| "#{x[0].name}:#{x[1].to_s}" } * ','
         cache_key = Digest::SHA1.hexdigest("#{query_key(sql, binds.dup)}#{binds_key}")
 
@@ -26,6 +28,13 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
       def query_key(sql, binds)
         query = sanitize_sql(sql)
         query_string = query.respond_to?(:ast) ? connection.to_sql(query, binds) : query.to_s
+      end
+
+      def run_without_cache
+        @without_cache = true
+        yield
+      ensure
+        @without_cache = false
       end
     end
   end

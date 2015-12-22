@@ -22,6 +22,15 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
     expect(model_with_expire.first).to be_nil
   end
 
+  it "don't cache it in run_without_cache block" do
+    model.run_without_cache do
+      model.create name: "test"
+      expect(model.first).to be_present
+      model.delete_all
+      expect(model.first).to be_blank
+    end
+  end
+
   it "clear all caches" do
     model.create name: "test"
     expect(model.first).to be_present
