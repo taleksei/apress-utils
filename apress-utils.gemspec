@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'authlogic', '~> 3'
   spec.add_runtime_dependency 'pg'
   spec.add_runtime_dependency 'string_tools', '>= 0.2.0'
+  spec.add_runtime_dependency 'rails-cache-tags', '>= 1.3.1'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
