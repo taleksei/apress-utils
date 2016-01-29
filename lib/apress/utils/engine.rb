@@ -26,6 +26,13 @@ module Apress
 
           ActionDispatch::Routing::Mapper.send  :include, ::Apress::Utils::Extensions::ActionDispatch::RoutesLoader
 
+          ActiveRecord::Base.send               :include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Base
+          ActiveRecord::Associations::CollectionProxy.send(
+            :include,
+            ::Apress::Utils::Extensions::ActiveRecord::Pluck::Associations::CollectionProxy
+          )
+          ActiveRecord::Relation.send           :include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Relation
+
           ActiveRecord::Migration.send          :include, ::Apress::Utils::Extensions::ActiveRecord::Migration
           ActiveRecord::MigrationProxy.send     :include, ::Apress::Utils::Extensions::ActiveRecord::MigrationProxy
 
