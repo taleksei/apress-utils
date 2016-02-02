@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2016-01-29 [11b8518](../../commit/11b8518) - __(Denis Korobitcin)__ feature(ar): pluck method backport
+
+#### v1.4.0
+ * 2015-12-22 [d9c5534](../../commit/d9c5534) - __(Michail Merkushin)__ Release 1.4.0
  * 2015-12-22 [02ab31a](../../commit/02ab31a) - __(Denis Korobitcin)__ feature(ar_caching) run_without_cache method
 
 #### v1.3.0
