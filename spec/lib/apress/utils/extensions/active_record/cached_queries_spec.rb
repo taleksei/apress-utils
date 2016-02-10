@@ -38,5 +38,23 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
     Rails.cache.clear
     expect(model.first).to be_nil
   end
+
+  context 'when cached queries with tags' do
+    let(:model_with_tags) { CachedQueryWithTags }
+
+    it 'clears cache after destroy' do
+      record = model_with_tags.create name: 'test'
+      expect(model_with_tags.first).to be_present
+      record.destroy
+      expect(model_with_tags.first).to be_nil
+    end
+
+    it 'clears cache after save' do
+      record = model_with_tags.create name: 'test'
+      expect(model_with_tags.first).to be_present
+      record.update_attributes(name: 'test2')
+      expect(model_with_tags.first.name).to eq 'test2'
+    end
+  end
 end
 

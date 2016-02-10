@@ -9,6 +9,13 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
     included do
       class_attribute :cached_queries_expires_in
       self.cached_queries_expires_in = nil
+
+      class_attribute :cached_queries_with_tags
+      self.cached_queries_with_tags = nil
+
+      after_save { |record| record.class.reset_cached_queries! }
+      after_destroy { |record| record.class.reset_cached_queries! }
+      after_rollback { |record| record.class.reset_cached_queries! }
     end
 
     module ClassMethods
@@ -18,7 +25,7 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         binds_key = binds.map { |x| "#{x[0].name}:#{x[1].to_s}" } * ','
         cache_key = Digest::SHA1.hexdigest("#{query_key(sql, binds.dup)}#{binds_key}")
 
-        records = Rails.cache.fetch(cache_key, expires_in: cached_queries_expires_in) do
+        records = Rails.cache.fetch(cache_key, cache_options) do
           connection.select_all(sanitize_sql(sql), "#{name} Load", binds)
         end
 
@@ -35,6 +42,24 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         yield
       ensure
         @without_cache = false
+      end
+
+      def cache_tag
+        "#{table_name}-queries"
+      end
+
+      def reset_cached_queries!
+        return unless cached_queries_with_tags
+        Rails.cache.delete_by_tags(cache_tag)
+      end
+
+      def cache_options
+        return @cache_options if defined?(@cache_options)
+
+        @cache_options = {}
+        @cache_options[:tags] = cache_tag if cached_queries_with_tags
+        @cache_options[:expires_in] = cached_queries_expires_in if cached_queries_expires_in
+        @cache_options
       end
     end
   end
