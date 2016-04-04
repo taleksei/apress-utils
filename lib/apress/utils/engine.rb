@@ -11,10 +11,11 @@ module Apress
   module Utils
     class Engine < ::Rails::Engine
       config.autoload_paths += Dir["#{config.root}/lib/"]
+      cd = File.dirname(__FILE__)
+      require cd + '/extensions/uri'
 
       if Rails::VERSION::STRING < '3.2'
         config.before_initialize do
-          cd = File.dirname(__FILE__)
           require cd + '/extensions/active_record/postgresql_patches'
           require cd + '/extensions/rails_patches'
           require cd + '/extensions/tags_patches'
