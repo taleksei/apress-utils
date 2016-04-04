@@ -1,5 +1,10 @@
 
 #### [Current]
+ * 2016-04-04 [5b7a1ed](../../commit/5b7a1ed) - __(Dmitry Bochkarev)__ fix(open-uri): парсинг доменов с _ и юникодом
+ * 2016-01-28 [79445ab](../../commit/79445ab) - __(rolex08)__ fix: added tags for cached queries
+
+#### v1.5.0
+ * 2016-02-02 [6dcc45a](../../commit/6dcc45a) - __(Denis Korobitcin)__ Release 1.5.0
  * 2016-01-29 [11b8518](../../commit/11b8518) - __(Denis Korobitcin)__ feature(ar): pluck method backport
 
 #### v1.4.0
