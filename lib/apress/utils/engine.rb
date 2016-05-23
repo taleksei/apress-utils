@@ -17,6 +17,7 @@ module Apress
       if Rails::VERSION::STRING < '3.2'
         config.before_initialize do
           require cd + '/extensions/active_record/postgresql_patches'
+          require cd + '/extensions/rack_patches'
           require cd + '/extensions/rails_patches'
           require cd + '/extensions/tags_patches'
           require cd + '/extensions/content_for_cache'
