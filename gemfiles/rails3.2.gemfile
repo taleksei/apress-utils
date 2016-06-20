@@ -3,6 +3,7 @@
 source "https://gems.railsc.ru"
 source "https://rubygems.org"
 
+gem "readthis", "~> 1.0.0", :github => "abak-press/readthis"
 gem "rails", "~> 3.2.0"
 gem "authlogic", "~> 3.4.0"
 
