@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2016-06-21 [63b7ce4](../../commit/63b7ce4) - __(Denis Korobicyn)__ fix: gemspec dependency for readthis
+
+#### v1.7.0
+ * 2016-06-21 [4a5cd15](../../commit/4a5cd15) - __(Denis Korobicyn)__ Release 1.7.0
  * 2016-06-20 [5c08597](../../commit/5c08597) - __(Denis Korobicyn)__ chore: remove gemfiles
  * 2016-06-20 [9a550df](../../commit/9a550df) - __(Denis Korobicyn)__ hack: force key encoding in readthis
  * 2016-05-29 [30e629f](../../commit/30e629f) - __(Konstantin Lazarev)__ fix(Active::Record): speed up STI models
