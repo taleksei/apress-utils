@@ -1,5 +1,12 @@
 
 #### [Current]
+ * 2016-06-20 [5c08597](../../commit/5c08597) - __(Denis Korobicyn)__ chore: remove gemfiles
+ * 2016-06-20 [9a550df](../../commit/9a550df) - __(Denis Korobicyn)__ hack: force key encoding in readthis
+ * 2016-05-29 [30e629f](../../commit/30e629f) - __(Konstantin Lazarev)__ fix(Active::Record): speed up STI models
+ * 2016-05-23 [f310260](../../commit/f310260) - __(Sergey Kucher)__ fix: error on loading file with % character https://jira.railsc.ru/browse/PC4-17361
+
+#### v1.6.0
+ * 2016-04-04 [aa29b8a](../../commit/aa29b8a) - __(Michail Merkushin)__ Release 1.6.0
  * 2016-04-04 [5b7a1ed](../../commit/5b7a1ed) - __(Dmitry Bochkarev)__ fix(open-uri): парсинг доменов с _ и юникодом
  * 2016-01-28 [79445ab](../../commit/79445ab) - __(rolex08)__ fix: added tags for cached queries
 
