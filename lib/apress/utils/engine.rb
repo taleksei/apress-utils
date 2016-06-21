@@ -21,6 +21,7 @@ module Apress
           require cd + '/extensions/rails_patches'
           require cd + '/extensions/tags_patches'
           require cd + '/extensions/content_for_cache'
+          require cd + '/extensions/readthis/cache'
 
           ActionView::Helpers::InstanceTag.send :include, ::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag
           ActionView::Helpers::FormBuilder.send :include, ::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder
@@ -39,6 +40,8 @@ module Apress
           ActiveRecord::MigrationProxy.send     :include, ::Apress::Utils::Extensions::ActiveRecord::MigrationProxy
 
           Authlogic::ActsAsAuthentic::Login::Config.send :include, ::Apress::Utils::Extensions::Authlogic::Login
+
+          Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
         end
       end
     end
