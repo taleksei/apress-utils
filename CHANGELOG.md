@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2016-07-07 [6d702a5](../../commit/6d702a5) - __(Semyon Pupkov)__ fix: allow to include standalone module
+
+#### v1.7.1
+ * 2016-06-21 [917142b](../../commit/917142b) - __(Denis Korobicyn)__ Release 1.7.1
  * 2016-06-21 [63b7ce4](../../commit/63b7ce4) - __(Denis Korobicyn)__ fix: gemspec dependency for readthis
 
 #### v1.7.0
