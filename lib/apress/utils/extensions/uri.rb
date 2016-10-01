@@ -6,7 +6,11 @@ require 'addressable/uri'
 # source: http://stackoverflow.com/a/17108137/2091157
 module URI
   class Parser
+    alias_method :_original_split, :split
+
     def split(url)
+      return _original_split(url) unless url
+
       a = Addressable::URI.parse(url).normalize
       [a.scheme, a.userinfo, a.host, a.port, nil, a.path, nil, a.query, a.fragment]
     end
