@@ -1,28 +1,19 @@
-RAILS_ENV = test
-BUNDLE = RAILS_ENV=${RAILS_ENV} bundle
+BUNDLE_VERSION = 1.13.1
+BUNDLE = bundle _${BUNDLE_VERSION}_
 BUNDLE_OPTIONS = -j 2
-RSPEC = ${APPRAISAL} rspec
-APPRAISAL = ${BUNDLE} exec appraisal
 
-all: test
+default: test
 
-test: config/database bundler/install appraisal/install
-	${RSPEC} spec 2>&1
+test: appraisal/install
+	${BUNDLE} exec appraisal ${BUNDLE} exec rspec 2>&1
 
-config/database:
-	touch spec/internal/config/database.yml
-	echo 'test:' >> spec/internal/config/database.yml
-	echo '  adapter: postgresql' >> spec/internal/config/database.yml
-	echo '  database: docker' >> spec/internal/config/database.yml
-	echo '  username: docker' >> spec/internal/config/database.yml
-	echo '  host: localhost' >> spec/internal/config/database.yml
-	echo '  min_messages: warning' >> spec/internal/config/database.yml
+appraisal/install: bundle/install
+	${BUNDLE} exec appraisal install
 
-bundler/install:
-	if ! gem list bundler -i > /dev/null; then \
-	  gem install bundler; \
-	fi
-	${BUNDLE} install ${BUNDLE_OPTIONS}
+bundle/install:
+	gem list -i -v ${BUNDLE_VERSION} bundler > /dev/null || gem install bundler --no-ri --no-rdoc --version=${BUNDLE_VERSION}
+	${BUNDLE} check || ${BUNDLE} install ${BUNDLE_OPTIONS}
 
-appraisal/install:
-	${APPRAISAL} install
+clean:
+	rm -f Gemfile.lock
+	rm -rf gemfiles
