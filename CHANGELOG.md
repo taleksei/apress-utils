@@ -1,5 +1,10 @@
 
 #### [Current]
+ * 2016-10-01 [559cbf5](../../commit/559cbf5) - __(Dmitry Bochkarev)__ chore: порядок для запуска тестов
+ * 2016-10-01 [4d9311f](../../commit/4d9311f) - __(Dmitry Bochkarev)__ fix(open-uri): не пытаемся парсить пустой урл(возникает при редиректах)
+
+#### v1.7.2
+ * 2016-07-07 [1904f10](../../commit/1904f10) - __(Semyon Pupkov)__ Release 1.7.2
  * 2016-07-07 [6d702a5](../../commit/6d702a5) - __(Semyon Pupkov)__ fix: allow to include standalone module
 
 #### v1.7.1
