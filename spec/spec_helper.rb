@@ -11,7 +11,6 @@ Combustion.initialize! :all do
 end
 
 require 'rspec/rails'
-require "pry-debugger"
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true

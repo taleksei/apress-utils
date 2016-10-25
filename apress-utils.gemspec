@@ -32,5 +32,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'combustion', '>= 0.5.2'
   spec.add_development_dependency 'appraisal'
-  spec.add_development_dependency 'pry-debugger'
 end
