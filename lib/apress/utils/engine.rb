@@ -12,7 +12,15 @@ module Apress
     class Engine < ::Rails::Engine
       config.autoload_paths += Dir["#{config.root}/lib/"]
       cd = File.dirname(__FILE__)
-      require cd + '/extensions/uri'
+
+      require cd + '/extensions/uri/parsers_overrides'
+
+      if RUBY_VERSION < '2.2'
+        URI::Parser.send(:include, ::Apress::Utils::Extensions::Uri::ParsersOverrides)
+      else
+        URI::RFC2396_Parser.send(:include, ::Apress::Utils::Extensions::Uri::ParsersOverrides)
+        URI::RFC3986_Parser.send(:include, ::Apress::Utils::Extensions::Uri::ParsersOverrides)
+      end
 
       if Rails::VERSION::STRING < '3.2'
         config.before_initialize do

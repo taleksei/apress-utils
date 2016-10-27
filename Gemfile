@@ -5,4 +5,10 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'pg', '< 0.19' if RUBY_VERSION < '2'
+if RUBY_VERSION < '2'
+  gem 'pg', '< 0.19.0'
+  gem 'pry-debugger'
+else
+  gem 'test-unit'
+  gem 'pry-byebug'
+end
