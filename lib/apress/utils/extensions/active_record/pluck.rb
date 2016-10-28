@@ -1,22 +1,4 @@
 module Apress::Utils::Extensions::ActiveRecord::Pluck
-  module Base
-    extend ActiveSupport::Concern
-
-    module ClassMethods
-      delegate :pluck, to: :scoped
-    end
-  end
-
-  module Associations
-    module CollectionProxy
-      extend ActiveSupport::Concern
-
-      included do
-        delegate :pluck, to: :scoped
-      end
-    end
-  end
-
   # = Active Record Relation
   module Relation
     # Returns <tt>Array</tt> with values of the specified column name
