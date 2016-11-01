@@ -19,19 +19,3 @@ module ActionView
     end
   end
 end
-
-# Кэширование проверки существования таблицы
-#
-# WARNING : Сткрытые фишечки
-# Данный monkey-patch чинит проблему с кэшированием prepared_statements для PostgreSQL в рельсах 3.1
-#
-# Одним из вариантов было отключение передачи биндингов в запросы
-# https://github.com/rails/rails/pull/5872#commitcomment-1380174
-# но т.к тут есть кэширование первого запроса, то остальные уже берутся из кэша
-ActiveRecord::Base.class_eval do
-  class << self
-    def table_exists?
-      connection_pool.table_exists?(table_name)
-    end
-  end
-end

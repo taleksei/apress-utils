@@ -3,8 +3,8 @@ require 'rails'
 
 require 'action_view'
 require 'active_record'
+require 'active_record/connection_adapters/postgresql_adapter'
 require 'action_dispatch'
-require 'authlogic'
 require 'string_tools'
 
 module Apress
@@ -22,32 +22,31 @@ module Apress
         URI::RFC3986_Parser.send(:include, ::Apress::Utils::Extensions::Uri::ParsersOverrides)
       end
 
-      if Rails::VERSION::STRING < '3.2'
-        config.before_initialize do
-          require cd + '/extensions/active_record/postgresql_patches'
-          require cd + '/extensions/rack_patches'
-          require cd + '/extensions/rails_patches'
-          require cd + '/extensions/tags_patches'
+      config.before_initialize do
+        if Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR == 2
           require cd + '/extensions/content_for_cache'
-          require cd + '/extensions/readthis/cache'
+          require cd + '/extensions/action_view/helpers/form_tag_patch'
 
-          ActionView::Helpers::InstanceTag.send :include, ::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag
-          ActionView::Helpers::FormBuilder.send :include, ::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder
-          ActionView::Resolver.send             :include, ::Apress::Utils::Extensions::ActionView::ResolverSortLocals
-
-          ActionDispatch::Routing::Mapper.send  :include, ::Apress::Utils::Extensions::ActionDispatch::RoutesLoader
-
-          ActiveRecord::Base.send               :include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Base
-          ActiveRecord::Associations::CollectionProxy.send(
+          ActiveRecord::ConnectionAdapters::PostgreSQLColumn.send(
             :include,
-            ::Apress::Utils::Extensions::ActiveRecord::Pluck::Associations::CollectionProxy
+            ::Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::PostgreSQLColumn
           )
-          ActiveRecord::Relation.send           :include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Relation
+          ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.send(
+            :include,
+            ::Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
+          )
 
-          ActiveRecord::Migration.send          :include, ::Apress::Utils::Extensions::ActiveRecord::Migration
-          ActiveRecord::MigrationProxy.send     :include, ::Apress::Utils::Extensions::ActiveRecord::MigrationProxy
+          # Original version of pluck in rails 3.2 does not support selection of multiple columns
+          ActiveRecord::Relation.send(:include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Relation)
 
-          Authlogic::ActsAsAuthentic::Login::Config.send :include, ::Apress::Utils::Extensions::Authlogic::Login
+          ActionView::Helpers::InstanceTag.send(:include, ::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag)
+          ActionView::Helpers::FormBuilder.send(:include, ::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
+
+          ActionDispatch::Routing::Mapper.send(:include, ::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
+        end
+
+        if RUBY_VERSION < '2'
+          require cd + '/extensions/readthis/cache'
 
           Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
         end

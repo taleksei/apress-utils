@@ -7,6 +7,7 @@ gemspec
 
 if RUBY_VERSION < '2'
   gem 'pg', '< 0.19.0'
+  gem 'mime-types', '< 3.0'
   gem 'pry-debugger'
 else
   gem 'test-unit'
