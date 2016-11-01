@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2016-10-28 [40cc86c](../../commit/40cc86c) - __(Zhidkov Denis)__ feat: drop support of rails 3.1, add patches for rails 3.2
+
+#### v1.8.0
+ * 2016-11-01 [0135578](../../commit/0135578) - __(Zhidkov Denis)__ Release 1.8.0
  * 2016-10-25 [2d83ff5](../../commit/2d83ff5) - __(Zhidkov Denis)__ chore: add drone ci
 
 #### v1.7.3
