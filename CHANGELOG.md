@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2016-10-25 [2d83ff5](../../commit/2d83ff5) - __(Zhidkov Denis)__ chore: add drone ci
+
+#### v1.7.3
+ * 2016-10-03 [4e658bf](../../commit/4e658bf) - __(Dmitry Bochkarev)__ Release 1.7.3
  * 2016-10-01 [559cbf5](../../commit/559cbf5) - __(Dmitry Bochkarev)__ chore: порядок для запуска тестов
  * 2016-10-01 [4d9311f](../../commit/4d9311f) - __(Dmitry Bochkarev)__ fix(open-uri): не пытаемся парсить пустой урл(возникает при редиректах)
 
