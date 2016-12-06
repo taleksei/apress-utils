@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2016-12-06 [181a6a3](../../commit/181a6a3) - __(Denis Korobicyn)__ fix: allow encode cache to ascii for ruby 2 also
+
+#### v2.0.0
+ * 2016-11-01 [1ee64be](../../commit/1ee64be) - __(Zhidkov Denis)__ Release 2.0.0
  * 2016-10-28 [40cc86c](../../commit/40cc86c) - __(Zhidkov Denis)__ feat: drop support of rails 3.1, add patches for rails 3.2
 
 #### v1.8.0
