@@ -45,11 +45,9 @@ module Apress
           ActionDispatch::Routing::Mapper.send(:include, ::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
         end
 
-        if RUBY_VERSION < '2'
-          require cd + '/extensions/readthis/cache'
+        require cd + '/extensions/readthis/cache'
 
-          Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
-        end
+        Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
       end
     end
   end
