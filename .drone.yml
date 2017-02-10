@@ -1,13 +1,13 @@
 matrix:
   include:
-    - DOCKER_RUBY_VERSION: "2.2"
-      RUBY_IMAGE_TAG: "2.2-1"
+    - DOCKER_RUBY_VERSION: 2.2
+      RUBY_IMAGE_TAG: 2.2
 
-    - DOCKER_RUBY_VERSION: "1.9.3"
-      RUBY_IMAGE_TAG: "1.9.3-2"
+    - DOCKER_RUBY_VERSION: 1.9.3
+      RUBY_IMAGE_TAG: 1.9.3
 
 build:
-  image: abakpress/dind:2
+  image: abakpress/dind
   privileged: true
   volumes:
     - /home/data/drone/images:/images
@@ -19,13 +19,15 @@ build:
   commands:
     - wrapdocker docker -v
 
-    - if [ ! -e /images/ssh-agent.tar ]; then docker pull whilp/ssh-agent; docker save whilp/ssh-agent > /images/ssh-agent.tar; fi
-    - if [ ! -e /images/ruby_$RUBY_IMAGE_TAG.tar ]; then docker pull abakpress/ruby:$RUBY_IMAGE_TAG; docker save abakpress/ruby:$RUBY_IMAGE_TAG > /images/ruby_$RUBY_IMAGE_TAG.tar; fi
-    - if [ ! -e /images/postgres_$POSTGRES_IMAGE_TAG.tar ]; then docker pull abakpress/postgres:$POSTGRES_IMAGE_TAG; docker save abakpress/postgres:$POSTGRES_IMAGE_TAG > /images/postgres_$POSTGRES_IMAGE_TAG.tar; fi
+    - docker load < /images/ssh-agent.tar || true
+    - (docker pull whilp/ssh-agent | grep 'Image is up to date') || docker save whilp/ssh-agent > /images/ssh-agent.tar
 
-    - docker load -i /images/ssh-agent.tar
-    - docker load -i /images/ruby_$RUBY_IMAGE_TAG.tar
-    - docker load -i /images/postgres_$POSTGRES_IMAGE_TAG.tar
+    - docker load < /images/ruby_$RUBY_IMAGE_TAG.tar || true
+    - (docker pull abakpress/ruby:$RUBY_IMAGE_TAG | grep 'Image is up to date') || docker save abakpress/ruby:$RUBY_IMAGE_TAG > /images/ruby_$RUBY_IMAGE_TAG.tar
+
+    - docker load < /images/postgres_$POSTGRES_IMAGE_TAG.tar || true
+    - (docker pull abakpress/postgres:$POSTGRES_IMAGE_TAG | grep 'Image is up to date') || docker save abakpress/postgres:$POSTGRES_IMAGE_TAG > /images/postgres_$POSTGRES_IMAGE_TAG.tar
+
 
     - dip ssh add -T -v /ssh_keys -k /ssh_keys/id_rsa
     - dip provision
