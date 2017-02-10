@@ -1,5 +1,9 @@
 
 #### [Current]
+ * 2017-02-09 [be63dab](../../commit/be63dab) - __(terentev)__ feat(action_view): Add cache_if, cache_unless helper methods
+
+#### v2.0.1
+ * 2016-12-06 [5f1a3c4](../../commit/5f1a3c4) - __(Denis Korobicyn)__ Release 2.0.1
  * 2016-12-06 [181a6a3](../../commit/181a6a3) - __(Denis Korobicyn)__ fix: allow encode cache to ascii for ruby 2 also
 
 #### v2.0.0
