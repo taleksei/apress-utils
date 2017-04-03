@@ -49,6 +49,12 @@ module Apress
           require 'apress/utils/extensions/action_view/helpers/cache_helper'
         end
 
+        if Gem::Version.new(ActiveRecord::VERSION::STRING) < Gem::Version.new('4.2.1')
+          ActiveSupport.on_load(:active_record) do
+            prepend ::Apress::Utils::Extensions::ActiveRecord::AutosaveAssociation
+          end
+        end
+
         require cd + '/extensions/readthis/cache'
 
         Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
