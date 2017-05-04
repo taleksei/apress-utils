@@ -7,6 +7,7 @@ module Apress
       URL_PATH_INDEX = 4
       URL_QUERY_INDEX = 5
       URL_PARSE_REGEXP = %r{([^?]*(?:\A|//|@))?([^:/?#]+)?(:\d+)?(/[^?#]*)?(.*?)\Z}
+      DOMAIN_LTRIM_PREFIX = %r{\A(?:.*?://)?www\.}
 
       class << self
         def extract_parts(url)
@@ -94,6 +95,16 @@ module Apress
         def set_query(parts, query)
           parts[URL_QUERY_INDEX] = query
           parts
+        end
+
+        # Удаляет www для домена
+        def trim_mirror(domain)
+          domain.gsub(DOMAIN_LTRIM_PREFIX, '') if domain
+        end
+
+        # Приводит домен к нормальному виду - нижний регистр без www
+        def normalize(domain)
+          trim_mirror(domain.mb_chars.strip.downcase.to_s) if domain
         end
       end
     end
