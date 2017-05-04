@@ -106,6 +106,13 @@ module Apress
         def normalize(domain)
           trim_mirror(domain.mb_chars.strip.downcase.to_s) if domain
         end
+
+        def from_punycode(domain)
+          paths = extract_parts(domain)
+          path_host = CGI.unescape(SimpleIDN.to_unicode(get_host(paths)))
+          set_host(paths, path_host)
+          make_url(paths)
+        end
       end
     end
   end

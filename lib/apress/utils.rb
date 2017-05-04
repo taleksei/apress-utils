@@ -4,6 +4,7 @@ require 'apress/utils/engine'
 
 require 'rails-cache-tags'
 require 'readthis'
+require 'simpleidn'
 
 module Apress
   module Utils
