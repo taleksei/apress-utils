@@ -53,7 +53,10 @@ module ActionView
     # Added to support implementation of action caching
     def render_template_with_cached_content_for(template, layout_name = nil, locals = {})
       controller = @view.controller
-      if controller.respond_to?('caching_allowed?') && controller.caching_allowed? && controller.is_a?(ApplicationController)
+      if controller.respond_to?('caching_allowed?') &&
+         controller.caching_allowed? &&
+         defined?(ApplicationController) && controller.is_a?(ApplicationController)
+
         controller.cached_content_for.each { |k, v| @view.content_for(k, v) unless @view.content_for?(k) } if controller.cached_content_for.is_a?(Hash)
         return_value = render_template_without_cached_content_for(template, layout_name, locals)
         controller.cached_content_for = @view.content_to_cache
