@@ -12,4 +12,8 @@ ActiveRecord::Schema.define do
     t.string :text
     t.references :person
   end
+
+  create_table :test_models do |t|
+    t.string :name
+  end
 end
