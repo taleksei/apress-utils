@@ -56,5 +56,31 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
       expect(model_with_tags.first.name).to eq 'test2'
     end
   end
+
+  context 'when cached_query_store is assigned' do
+    before do
+      Rails.application.config.cached_query_store = ActiveSupport::Cache::MemoryStore.new
+
+      class TestModel < ActiveRecord::Base
+        include Apress::Utils::Extensions::ActiveRecord::CachedQueries
+      end
+
+      TestModel.create name: "custom store"
+    end
+
+    after do
+      Rails.application.config.cached_query_store = nil
+    end
+
+    it 'cache records in assigned store' do
+      expect(TestModel.first).to be_present
+      TestModel.delete_all
+      expect(TestModel.first).to be_present
+      Rails.cache.clear
+      expect(TestModel.first).to be_present
+      Rails.application.config.cached_query_store.clear
+      expect(TestModel.first).to be_nil
+    end
+  end
 end
 
