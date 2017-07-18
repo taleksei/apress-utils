@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'combustion'
 
 require 'apress/utils'
+require 'pry-byebug'
 
 Combustion.initialize! :all do
   config.perform_caching_queries = true

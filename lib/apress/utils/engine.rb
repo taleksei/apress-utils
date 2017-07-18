@@ -23,10 +23,24 @@ module Apress
       end
 
       config.before_initialize do
-        if Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR == 2
-          require cd + '/extensions/content_for_cache'
-          require cd + '/extensions/action_view/helpers/form_tag_patch'
+        if Utils.rails32? || Utils.rails40?
+          ActionView::Helpers::FormBuilder.include(::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
+          ActionDispatch::Routing::Mapper.include(::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
+        end
 
+        if Utils.rails40?
+          ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.prepend(
+            Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLAdapter
+          )
+
+          ActiveRecord::ConnectionAdapters::PostgreSQLColumn.prepend(
+            Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLColumn
+          )
+
+          ActionView::Helpers::ActiveModelInstanceTag.include(::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag)
+        end
+
+        if Utils.rails32?
           ActiveRecord::ConnectionAdapters::PostgreSQLColumn.send(
             :include,
             ::Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::PostgreSQLColumn
@@ -40,9 +54,6 @@ module Apress
           ActiveRecord::Relation.send(:include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Relation)
 
           ActionView::Helpers::InstanceTag.send(:include, ::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag)
-          ActionView::Helpers::FormBuilder.send(:include, ::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
-
-          ActionDispatch::Routing::Mapper.send(:include, ::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
         end
 
         if Rails::VERSION::MAJOR < 4
@@ -58,6 +69,10 @@ module Apress
         require cd + '/extensions/readthis/cache'
 
         Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
+      end
+
+      config.after_initialize do
+        ActiveRecord::Base.connection.send(:reload_type_map) if Utils.rails40?
       end
     end
   end
