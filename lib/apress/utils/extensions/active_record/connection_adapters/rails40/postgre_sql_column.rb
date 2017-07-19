@@ -10,11 +10,12 @@ module Apress
               end
 
               def simplified_type(field_type)
-                case field_type
-                when *::ActiveRecord::Base.connection.enum_types.values
+                type = super(field_type)
+
+                return type if type
+
+                if ::ActiveRecord::Base.connection.enum_types.values.include?(field_type)
                   field_type.to_sym
-                else
-                  super(field_type)
                 end
               end
 
@@ -25,7 +26,7 @@ module Apress
 
                   if match = /\A'(.*)'::(.*)\z/.match(default)
                     if ::ActiveRecord::Base.connection.enum_types.values.include?(match[2])
-                      return match[1]
+                      match[1]
                     end
                   end
                 end
