@@ -70,10 +70,6 @@ module Apress
 
         Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
       end
-
-      config.after_initialize do
-        ActiveRecord::Base.connection.send(:reload_type_map) if Utils.rails40?
-      end
     end
   end
 end
