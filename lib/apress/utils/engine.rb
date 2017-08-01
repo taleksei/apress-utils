@@ -24,6 +24,9 @@ module Apress
 
       config.before_initialize do
         if Utils.rails32? || Utils.rails40?
+          require cd + '/extensions/content_for_cache'
+          require cd + '/extensions/action_view/helpers/form_tag_patch'
+
           ActionView::Helpers::FormBuilder.include(::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
           ActionDispatch::Routing::Mapper.include(::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
         end
