@@ -9,4 +9,6 @@ RSpec.describe Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::Post
       expect(Person.new.state_was).to eq('pending')
     end
   end
+
+  it { expect(Person.new.is_priority).to eq false }
 end

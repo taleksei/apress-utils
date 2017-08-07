@@ -9,6 +9,7 @@ ActiveRecord::Schema.define do
     t.string :first_name
     t.string :last_name
     t.column :state, 'people_state', default: 'pending'
+    t.boolean :is_priority, default: false
   end
 
   create_table :phrases do |t|
