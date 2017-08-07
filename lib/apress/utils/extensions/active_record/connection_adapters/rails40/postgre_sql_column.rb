@@ -22,7 +22,7 @@ module Apress
               module ClassMethods
                 def extract_value_from_default(default)
                   default_value = super
-                  return default_value if default_value
+                  return default_value unless default_value.nil?
 
                   if match = /\A'(.*)'::(.*)\z/.match(default)
                     if ::ActiveRecord::Base.connection.enum_types.values.include?(match[2])
