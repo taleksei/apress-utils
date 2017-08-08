@@ -1,6 +1,19 @@
+# v2.4.0
+
+* 2017-08-08 [4d4b584](../../commit/4d4b584) - __(Artem Napolskih)__ Release 2.4.0 
+* 2017-08-07 [1522c65](../../commit/1522c65) - __(Semyon Pupkov)__ Fix set false default for rails4 
+https://jira.railsc.ru/browse/USERS-452
+
+* 2017-08-01 [4344b8f](../../commit/4344b8f) - __(Artem Napolskih)__ fix: returns lost patches 
+* 2017-07-30 [0072435](../../commit/0072435) - __(Artem Napolskih)__ feature: introduce local cache to query cache 
+* 2017-07-19 [3cc634c](../../commit/3cc634c) - __(Semyon Pupkov)__ fix: remove enum types momoization 
+* 2017-07-18 [1de521e](../../commit/1de521e) - __(Semyon Pupkov)__ feature: support enums for rails 4.0 (#40) 
+https://jira.railsc.ru/browse/USERS-452
+* 2017-05-16 [e0de5b7](../../commit/e0de5b7) - __(Artem Napolskih)__ feature: added class name to query cache key 
+* 2017-05-16 [312585c](../../commit/312585c) - __(Artem Napolskih)__ feature: ability to specify query cache storage 
+
 # v2.3.0
 
-* 2017-05-18 [c2ffd20](../../commit/c2ffd20) - __(Semyon Pupkov)__ Release 2.3.0 
 * 2017-05-04 [c259a55](../../commit/c259a55) - __(vadshalamov)__ fix: uninitialized constant ActionView::TemplateRenderer::ApplicationController 
 * 2017-05-04 [6eab127](../../commit/6eab127) - __(vadshalamov)__ feature: add from_punycode method to UrlParser 
 * 2017-05-04 [9958026](../../commit/9958026) - __(vadshalamov)__ feature: add normalize method to UrlParser 
