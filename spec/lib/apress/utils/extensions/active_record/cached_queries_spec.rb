@@ -4,12 +4,19 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
   let(:model) { CachedQuery }
   let(:model_with_expire) { CachedQueryWithExpire }
 
+  before do
+    CachedQuery.reset_local_query_cache
+    CachedQueryWithExpire.reset_local_query_cache
+  end
+
   it "cache records" do
     model.create name: "test"
     expect(model.first).to be_present
     model.delete_all
     expect(model.first).to be_present
     Rails.cache.clear
+    expect(model.first).to be_present
+    model.reset_local_query_cache
     expect(model.first).to be_nil
   end
 
@@ -35,7 +42,10 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
     model.create name: "test"
     expect(model.first).to be_present
     model.delete_all
+    expect(model.first).to be_present
     Rails.cache.clear
+    expect(model.first).to be_present
+    model.reset_local_query_cache
     expect(model.first).to be_nil
   end
 
@@ -79,6 +89,7 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
       Rails.cache.clear
       expect(TestModel.first).to be_present
       Rails.application.config.cached_query_store.clear
+      TestModel.reset_local_query_cache
       expect(TestModel.first).to be_nil
     end
   end
