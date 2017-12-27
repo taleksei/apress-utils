@@ -17,6 +17,9 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
       class_attribute :cached_queries_local_store_size
       self.cached_queries_local_store_size = 100
 
+      class_attribute :cached_queries_local_expires_in
+      self.cached_queries_local_expires_in = nil
+
       after_save { |record| record.class.reset_cached_queries! }
       after_destroy { |record| record.class.reset_cached_queries! }
       after_rollback { |record| record.class.reset_cached_queries! }
@@ -26,7 +29,8 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         attr_reader :local_store_size
 
         def initialize(options)
-          @options = options.except(:local_store_size)
+          @options = options.except(:local_store_size, :local_expires_in)
+          @local_expires_in = options.fetch(:local_expires_in, options[:expires_in])
           @local_store_size = options.fetch(:local_store_size)
         end
 
@@ -52,7 +56,7 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         def local_store
           @local_store ||=
             if @local_store_size > 0
-              ::LruRedux::TTL::Cache.new(@local_store_size, options[:expires_in] || :none)
+              ::LruRedux::TTL::Cache.new(@local_store_size, @local_expires_in || :none)
             else
               NullStore.new
             end
@@ -119,6 +123,7 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         @cache_options[:tags] = cache_tag if cached_queries_with_tags
         @cache_options[:expires_in] = cached_queries_expires_in if cached_queries_expires_in
         @cache_options[:local_store_size] = cached_queries_local_store_size
+        @cache_options[:local_expires_in] = cached_queries_local_expires_in if cached_queries_local_expires_in
         @cache_options
       end
 
