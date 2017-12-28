@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'appraisal'
   spec.add_development_dependency 'test-unit'
   spec.add_development_dependency 'pry-byebug'
+  spec.add_development_dependency 'timecop'
 end
