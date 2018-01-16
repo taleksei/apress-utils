@@ -12,7 +12,7 @@ module Apress
               module OIDEnum
                 class Enum < ::ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::OID::Type
                   def type_cast(value)
-                    value.to_s
+                    value.to_s unless value.nil?
                   end
                 end
               end
