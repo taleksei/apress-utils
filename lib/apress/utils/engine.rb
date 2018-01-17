@@ -40,7 +40,6 @@ module Apress
             Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLColumn
           )
 
-          ActionView::Helpers::ActiveModelInstanceTag.include(::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag)
         end
 
         if Utils.rails32?
