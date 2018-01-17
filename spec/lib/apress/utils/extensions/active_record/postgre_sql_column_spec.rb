@@ -10,5 +10,13 @@ RSpec.describe Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::Post
     end
   end
 
+  it 'allow nil assignment' do
+    person = Person.new
+
+    person.state = nil
+
+    expect(person.state).to be_nil
+  end
+
   it { expect(Person.new.is_priority).to eq false }
 end
