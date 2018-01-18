@@ -1,6 +1,12 @@
+# v2.5.0
+
+* 2018-01-18 [f9f1087](../../commit/f9f1087) - __(Michail Merkushin)__ fix: Lock pg less then 1 
+* 2018-01-18 [93473af](../../commit/93473af) - __(Michail Merkushin)__ Release 2.5.0 
+* 2017-12-27 [f6a1167](../../commit/f6a1167) - __(korotaev)__ feat(cached_queries): local store expiring setting 
+https://jira.railsc.ru/browse/GOODS-964
+
 # v2.4.0
 
-* 2017-08-08 [4d4b584](../../commit/4d4b584) - __(Artem Napolskih)__ Release 2.4.0 
 * 2017-08-07 [1522c65](../../commit/1522c65) - __(Semyon Pupkov)__ Fix set false default for rails4 
 https://jira.railsc.ru/browse/USERS-452
 
