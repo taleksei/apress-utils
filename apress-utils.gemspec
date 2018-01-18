@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'rails', '>= 3.2.0', '< 5'
-  spec.add_runtime_dependency 'pg'
+  spec.add_runtime_dependency 'pg', '< 1'
   spec.add_runtime_dependency 'string_tools', '>= 0.2.0'
   spec.add_runtime_dependency 'rails-cache-tags', '>= 1.3.1'
   spec.add_runtime_dependency 'addressable', '>= 2.3.2'
