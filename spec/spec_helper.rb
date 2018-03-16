@@ -5,6 +5,7 @@ require 'combustion'
 
 require 'apress/utils'
 require 'pry-byebug'
+require 'test_after_commit'
 
 Combustion.initialize! :all do
   config.perform_caching_queries = true
