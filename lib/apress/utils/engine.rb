@@ -72,6 +72,10 @@ module Apress
         require cd + '/extensions/readthis/cache'
 
         Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
+
+        if Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR < 2
+          require 'apress/utils/extensions/action_dispatch/flash'
+        end
       end
     end
   end
