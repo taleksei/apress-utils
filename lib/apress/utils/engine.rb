@@ -40,7 +40,6 @@ module Apress
             Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLColumn
           )
 
-          ActionView::Helpers::ActiveModelInstanceTag.include(::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag)
         end
 
         if Utils.rails32?
@@ -72,6 +71,10 @@ module Apress
         require cd + '/extensions/readthis/cache'
 
         Readthis::Cache.send(:include, ::Apress::Utils::Extensions::Readthis::Cache)
+
+        if Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR < 2
+          require 'apress/utils/extensions/action_dispatch/flash'
+        end
       end
     end
   end
