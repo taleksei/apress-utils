@@ -3,8 +3,12 @@ module Apress::Utils::Extensions::ActiveRecord::AfterCommitChanges
   extend ActiveSupport::Concern
 
   included do
-    before_save :clear_before_commit_changes
+    before_save :clear_before_commit_changes, if: proc { @clear_before_commit_changes_on_save }
     after_save  :store_before_commit_changes
+
+    after_commit do
+      @clear_before_commit_changes_on_save = true
+    end
 
     attribute_method_suffix '_before_commit_changed?', '_before_commit_was'
   end
@@ -24,11 +28,12 @@ module Apress::Utils::Extensions::ActiveRecord::AfterCommitChanges
   end
 
   def clear_before_commit_changes
+    @clear_before_commit_changes_on_save = false
     @before_commit_changed_attributes = {}
   end
 
   def store_before_commit_changes
-    @before_commit_changed_attributes = self.changes
+    before_commit_changed_attributes.merge!(changes)
   end
 
   # Handle <tt>*_changed?</tt> for +method_missing+.
