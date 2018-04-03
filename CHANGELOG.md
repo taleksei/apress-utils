@@ -1,6 +1,13 @@
+# v2.6.1
+
+* 2018-04-03 [570d148](../../commit/570d148) - __(Mikhail Nelaev)__ Release 2.6.1 
+* 2018-03-16 [442f2ac](../../commit/442f2ac) - __(Mikhail Nelaev)__ fix: не затирать before_commit_changed до завершения транзакции 
+https://jira.railsc.ru/browse/GOODS-1183
+
+* 2018-03-16 [bb2329e](../../commit/bb2329e) - __(Mikhail Nelaev)__ chore: use postgres 9.6 
+
 # v2.6.0
 
-* 2018-04-03 [f13f638](../../commit/f13f638) - __(Mikhail Nelaev)__ Release 2.6.0 
 * 2018-03-20 [21f3cf8](../../commit/21f3cf8) - __(Artem Napolskih)__ feature: rails 4 Flash fixes 
 * 2018-01-16 [5044919](../../commit/5044919) - __(Artem Napolskih)__ Fix error_message_on helper on Rails 4 
 * 2018-01-16 [2b86493](../../commit/2b86493) - __(Denis Korobicyn)__ chore: limit version pg 
