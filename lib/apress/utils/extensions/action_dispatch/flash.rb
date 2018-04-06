@@ -128,7 +128,7 @@ module ActionDispatch
 
       def update(h) #:nodoc:
         @discard.subtract stringify_array(h.keys)
-        @flashes.update h
+        @flashes.update h.stringify_keys
         self
       end
 
