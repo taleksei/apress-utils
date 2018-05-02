@@ -1,5 +1,5 @@
 module Apress
   module Utils
-    VERSION = '2.6.2'.freeze
+    VERSION = '2.7.0'.freeze
   end
 end
