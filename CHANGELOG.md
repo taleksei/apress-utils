@@ -1,6 +1,10 @@
+# v2.7.0
+
+* 2018-05-02 [ce1fcba](../../commit/ce1fcba) - __(Artem Napolskih)__ Release 2.7.0 
+* 2018-05-02 [e9833c1](../../commit/e9833c1) - __(Artem Napolskih)__ feature: return behavior method first from Rails 3x 
+
 # v2.6.2
 
-* 2018-04-06 [9d03db4](../../commit/9d03db4) - __(Artem Napolskih)__ Release 2.6.2 
 * 2018-04-06 [ffbf04e](../../commit/ffbf04e) - __(Artem Napolskih)__ feature: rails 4 Flash fixes 
 https://github.com/rails/rails/commit/b97e087321f33283d836c5b5964976c88230349a
 
