@@ -75,6 +75,10 @@ module Apress
         if Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR < 2
           require 'apress/utils/extensions/action_dispatch/flash'
         end
+
+        if Rails::VERSION::MAJOR == 4
+          ActiveRecord::Relation.prepend(Extensions::ActiveRecord::FinderMethods)
+        end
       end
     end
   end
