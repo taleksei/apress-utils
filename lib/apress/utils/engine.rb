@@ -78,6 +78,10 @@ module Apress
 
         if Rails::VERSION::MAJOR == 4
           ActiveRecord::Relation.prepend(Extensions::ActiveRecord::FinderMethods)
+
+          if Rails::VERSION::MINOR < 1
+            require 'apress/utils/extensions/active_support/time_with_zone'
+          end
         end
       end
     end
