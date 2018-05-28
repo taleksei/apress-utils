@@ -1,6 +1,11 @@
+# v2.8.0
+
+* 2018-05-28 [b88a8a5](../../commit/b88a8a5) - __(Zhidkov Denis)__ Release 2.8.0 
+* 2018-05-25 [97bb6a2](../../commit/97bb6a2) - __(Zhidkov Denis)__ feat: allow to set time precision for json encoder in rails 4.0.x 
+https://jira.railsc.ru/browse/ORDERS-1589
+
 # v2.7.0
 
-* 2018-05-02 [ce1fcba](../../commit/ce1fcba) - __(Artem Napolskih)__ Release 2.7.0 
 * 2018-05-02 [e9833c1](../../commit/e9833c1) - __(Artem Napolskih)__ feature: return behavior method first from Rails 3x 
 
 # v2.6.2
