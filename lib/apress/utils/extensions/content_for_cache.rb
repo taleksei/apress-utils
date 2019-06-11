@@ -33,10 +33,8 @@ module ActionController
       def read_fragment_with_content_to_cache(key, options = nil)
         result = read_fragment_without_content_to_cache(key, options)
         if result.is_a?(Hash) && result.key?(:layout)
-          result = result.dup if result.frozen?
-          fragment = result.delete(:layout)
-          self.cached_content_for = {}.merge(result)
-          result = fragment
+          self.cached_content_for = result.except(:layout)
+          result = result[:layout]
         end
 
         result.respond_to?(:html_safe) ? result.html_safe : result
