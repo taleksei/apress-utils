@@ -1,6 +1,11 @@
+# v2.8.1
+
+* 2019-06-25 [e043208](../../commit/e043208) - __(Valery Glyantsev)__ Release 2.8.1 
+* 2019-06-11 [5f34db3](../../commit/5f34db3) - __(Valery Glyantsev)__ fix: read cache without delete 
+https://jira.railsc.ru/browse/PC4-22381
+
 # v2.8.0
 
-* 2018-05-28 [b88a8a5](../../commit/b88a8a5) - __(Zhidkov Denis)__ Release 2.8.0 
 * 2018-05-25 [97bb6a2](../../commit/97bb6a2) - __(Zhidkov Denis)__ feat: allow to set time precision for json encoder in rails 4.0.x 
 https://jira.railsc.ru/browse/ORDERS-1589
 
