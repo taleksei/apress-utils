@@ -1,4 +1,3 @@
-# coding: utf-8
 require 'rails'
 
 require 'action_view'
@@ -26,12 +25,10 @@ module Apress
         require cd + '/extensions/content_for_cache'
         require cd + '/extensions/action_view/helpers/form_tag_patch'
 
-        if Utils.rails32? || Utils.rails40?
+        if Utils.rails40?
           ActionView::Helpers::FormBuilder.include(::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
           ActionDispatch::Routing::Mapper.include(::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
-        end
 
-        if Utils.rails40?
           ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.prepend(
             Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLAdapter
           )
@@ -39,23 +36,6 @@ module Apress
           ActiveRecord::ConnectionAdapters::PostgreSQLColumn.prepend(
             Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLColumn
           )
-
-        end
-
-        if Utils.rails32?
-          ActiveRecord::ConnectionAdapters::PostgreSQLColumn.send(
-            :include,
-            ::Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::PostgreSQLColumn
-          )
-          ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.send(
-            :include,
-            ::Apress::Utils::Extensions::ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
-          )
-
-          # Original version of pluck in rails 3.2 does not support selection of multiple columns
-          ActiveRecord::Relation.send(:include, ::Apress::Utils::Extensions::ActiveRecord::Pluck::Relation)
-
-          ActionView::Helpers::InstanceTag.send(:include, ::Apress::Utils::Extensions::ActionView::Helpers::InstanceTag)
         end
 
         if Rails::VERSION::MAJOR < 4

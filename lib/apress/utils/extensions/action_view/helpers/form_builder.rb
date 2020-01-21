@@ -1,4 +1,3 @@
-# coding: utf-8
 module Apress::Utils::Extensions::ActionView::Helpers::FormBuilder
   extend ActiveSupport::Concern
 
@@ -16,23 +15,17 @@ module Apress::Utils::Extensions::ActionView::Helpers::FormBuilder
 
   def error_message_on(method, options = {})
     options = objectify_options(options)
+    object = options[:object]
+    return unless object
 
-    if Rails::VERSION::MAJOR <= 3
-      instance_tag = ::ActionView::Helpers::InstanceTag.new(@object_name, method, self, options.delete(:object))
-      instance_tag.to_error_message_tag(options)
-    else
-      object = options[:object]
-      return unless object
+    instance_tag = ActionView::Helpers::Tags::Base.new(@object_name, method, self, options)
 
-      instance_tag = ActionView::Helpers::Tags::Base.new(@object_name, method, self, options)
+    errors = []
+    object.errors.each { |attr, err| errors.push(err) if attr.to_s == method.to_s }
+    return if errors.empty?
 
-      errors = []
-      object.errors.each { |attr, err| errors.push(err) if attr.to_s == method.to_s }
-      return if errors.empty?
-
-      options[:class] ||= 'form-error'
-      # пока показываем тольк первую ошибку, возможно нужно показывать все?
-      instance_tag.content_tag(:span, "#{errors.first}".html_safe, options)
-    end
+    options[:class] ||= 'form-error'
+    # пока показываем тольк первую ошибку, возможно нужно показывать все?
+    instance_tag.content_tag(:span, "#{errors.first}".html_safe, options)
   end
 end
