@@ -1,6 +1,12 @@
+# v2.8.2
+
+* 2020-01-24 [d952d79](../../commit/d952d79) - __(ZhidkovDenis)__ Release 2.8.2 
+* 2020-01-24 [5757009](../../commit/5757009) - __(ZhidkovDenis)__ chore: move to drone 1.6 
+* 2020-01-21 [9f1d1ce](../../commit/9f1d1ce) - __(ZhidkovDenis)__ fix: replace deleted helper form_tag_in_block in rails 4.2 
+* 2020-01-21 [abdffe9](../../commit/abdffe9) - __(ZhidkovDenis)__ chore: drop rails 3.2 support, run drone with ruby 2.3 
+
 # v2.8.1
 
-* 2019-06-25 [e043208](../../commit/e043208) - __(Valery Glyantsev)__ Release 2.8.1 
 * 2019-06-11 [5f34db3](../../commit/5f34db3) - __(Valery Glyantsev)__ fix: read cache without delete 
 https://jira.railsc.ru/browse/PC4-22381
 
