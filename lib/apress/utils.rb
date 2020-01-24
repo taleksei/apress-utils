@@ -1,4 +1,3 @@
-# coding: utf-8
 require 'apress/utils/version'
 
 require 'rails-cache-tags'
@@ -7,10 +6,6 @@ require 'simpleidn'
 
 module Apress
   module Utils
-    def rails32?
-      Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR == 2
-    end
-
     def rails40?
       Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR == 0
     end
@@ -19,7 +14,11 @@ module Apress
       Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR == 1
     end
 
-    module_function :rails32?, :rails40?, :rails41?
+    def rails42?
+      Rails::VERSION::MAJOR == 4 && Rails::VERSION::MINOR == 2
+    end
+
+    module_function :rails40?, :rails41?, :rails42?
   end
 end
 
