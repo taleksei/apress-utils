@@ -1,6 +1,10 @@
+# v2.8.3
+
+* 2020-07-27 [26449e8](../../commit/26449e8) - __(Andrew N. Shalaev)__ Release v2.8.3 
+* 2020-07-27 [895b485](../../commit/895b485) - __(Andrew N. Shalaev)__ fix: check and dup frozen strings 
+
 # v2.8.2
 
-* 2020-01-24 [d952d79](../../commit/d952d79) - __(ZhidkovDenis)__ Release 2.8.2 
 * 2020-01-24 [5757009](../../commit/5757009) - __(ZhidkovDenis)__ chore: move to drone 1.6 
 * 2020-01-21 [9f1d1ce](../../commit/9f1d1ce) - __(ZhidkovDenis)__ fix: replace deleted helper form_tag_in_block in rails 4.2 
 * 2020-01-21 [abdffe9](../../commit/abdffe9) - __(ZhidkovDenis)__ chore: drop rails 3.2 support, run drone with ruby 2.3 
