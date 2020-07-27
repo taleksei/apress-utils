@@ -26,7 +26,9 @@ module Apress
           end
 
           def write_entity_with_encoding(key, *args)
-            write_entity_without_encoding(key.force_encoding(Encoding::BINARY), *args)
+            key = (key.frozen? ? key.dup : key).force_encoding(Encoding::BINARY)
+
+            write_entity_without_encoding(key, *args)
           end
         end
       end
