@@ -1,6 +1,11 @@
+# v2.8.4
+
+* 2021-02-15 [9e75944](../../commit/9e75944) - __(Simeon Movchan)__ Release 2.8.4 
+* 2021-02-15 [e5a1a40](../../commit/e5a1a40) - __(Simeon Movchan)__ fix: dont cache queries with joins 
+https://jira.railsc.ru/browse/PC4-25904
+
 # v2.8.3
 
-* 2020-07-27 [26449e8](../../commit/26449e8) - __(Andrew N. Shalaev)__ Release v2.8.3 
 * 2020-07-27 [895b485](../../commit/895b485) - __(Andrew N. Shalaev)__ fix: check and dup frozen strings 
 
 # v2.8.2
