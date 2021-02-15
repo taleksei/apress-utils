@@ -117,6 +117,15 @@ describe Apress::Utils::Extensions::ActiveRecord::CachedQueries do
     end
   end
 
+  it "don't cache queries with joins" do
+    model.create name: 'test'
+    expect(
+      model.joins("JOIN #{model.quoted_table_name} other ON #{model.quoted_table_name}.id = other.id").first
+    ).to be_present
+    model.delete_all
+    expect(model.first).to be_blank
+  end
+
   it "clear all caches" do
     model.create name: "test"
     expect(model.first).to be_present

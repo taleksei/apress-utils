@@ -1,4 +1,3 @@
-# coding: utf-8
 require "digest/sha1"
 require "lru_redux"
 
@@ -81,7 +80,11 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         return super if @without_cache
 
         binds_key = binds.map { |x| "#{x[0].name}:#{x[1].to_s}" } * ','
-        cache_key = Digest::SHA1.hexdigest("#{query_key(sql, binds.dup)}#{binds_key}")
+        sql_key = query_key(sql, binds.dup)
+
+        return super if sql_key.include? ' JOIN '
+
+        cache_key = Digest::SHA1.hexdigest("#{sql_key}#{binds_key}")
         cache_key = "#{self.to_s.demodulize}:#{cache_key}"
 
         records = cached_queries_store.fetch(cache_key) do
