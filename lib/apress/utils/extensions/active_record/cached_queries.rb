@@ -87,11 +87,9 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
         cache_key = Digest::SHA1.hexdigest("#{sql_key}#{binds_key}")
         cache_key = "#{self.to_s.demodulize}:#{cache_key}"
 
-        records = cached_queries_store.fetch(cache_key) do
-          connection.select_all(sanitize_sql(sql), "#{name} Load", binds)
+        cached_queries_store.fetch(cache_key) do
+          super
         end
-
-        records.map { |record| instantiate(record) }
       end
 
       def query_key(sql, binds)
