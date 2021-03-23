@@ -1,6 +1,10 @@
+# v2.8.5
+
+* 2021-03-22 [b4360c0](../../commit/b4360c0) - __(TamarinEA)__ Release 2.8.5 
+* 2021-02-20 [40c5fce](../../commit/40c5fce) - __(TamarinEA)__ fix: do not rewrite rails method in cached queries 
+
 # v2.8.4
 
-* 2021-02-15 [9e75944](../../commit/9e75944) - __(Simeon Movchan)__ Release 2.8.4 
 * 2021-02-15 [e5a1a40](../../commit/e5a1a40) - __(Simeon Movchan)__ fix: dont cache queries with joins 
 https://jira.railsc.ru/browse/PC4-25904
 
