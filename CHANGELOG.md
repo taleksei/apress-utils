@@ -1,6 +1,11 @@
+# v2.8.6
+
+* 2021-07-09 [721b391](../../commit/721b391) - __(Andrew N. Shalaev)__ Release v2.8.6 
+* 2021-07-09 [c08aab7](../../commit/c08aab7) - __(Andrew N. Shalaev)__ fix: include patch for formbuilder for error_message_on helper 
+https://jira.railsc.ru/browse/BPC-17628
+
 # v2.8.5
 
-* 2021-03-22 [b4360c0](../../commit/b4360c0) - __(TamarinEA)__ Release 2.8.5 
 * 2021-02-20 [40c5fce](../../commit/40c5fce) - __(TamarinEA)__ fix: do not rewrite rails method in cached queries 
 
 # v2.8.4
