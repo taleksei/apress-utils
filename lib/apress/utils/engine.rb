@@ -25,8 +25,11 @@ module Apress
         require cd + '/extensions/content_for_cache'
         require cd + '/extensions/action_view/helpers/form_tag_patch'
 
-        if Utils.rails40?
+        if Rails.version < '5'
           ActionView::Helpers::FormBuilder.include(::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
+        end
+
+        if Utils.rails40?
           ActionDispatch::Routing::Mapper.include(::Apress::Utils::Extensions::ActionDispatch::RoutesLoader)
 
           ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.prepend(
@@ -36,10 +39,6 @@ module Apress
           ActiveRecord::ConnectionAdapters::PostgreSQLColumn.prepend(
             Extensions::ActiveRecord::ConnectionAdapters::Rails40::PostgreSQLColumn
           )
-        end
-
-        if Rails::VERSION::MAJOR < 4
-          require 'apress/utils/extensions/action_view/helpers/cache_helper'
         end
 
         if Gem::Version.new(ActiveRecord::VERSION::STRING) < Gem::Version.new('4.2.1')
