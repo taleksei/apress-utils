@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 # http://hashrocket.com/blog/posts/deferring-database-constraints
 module Apress::Utils::Extensions::ActiveRecord::Deferrable
   def deferrable_uniqueness_constraints_on(column_name)

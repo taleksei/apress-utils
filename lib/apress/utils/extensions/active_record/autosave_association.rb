@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Fixes 'https://github.com/rails/rails/pull/16640'
 require 'active_record/autosave_association'
 

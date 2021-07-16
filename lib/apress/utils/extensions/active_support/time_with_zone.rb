@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'apress/utils/extensions/active_support/json/encoding'
 
 module ActiveSupport

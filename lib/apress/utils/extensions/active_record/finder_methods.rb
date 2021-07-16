@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Apress::Utils::Extensions::ActiveRecord
   module FinderMethods
     # В рельсах 4.0, в отличии от предыдущих версий, first добавляет сортировку, что

@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 
 # Public: Модуль, расширяющий наследников ActiveRecord::Base, которые используют механизм STI и
 #         хранят в таблице STI класс без неймспейса.
