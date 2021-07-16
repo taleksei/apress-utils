@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # В рельсах 4.0 есть проблемы с флешем - пишем символы, читаем строки и тп.
 # https://github.com/rails/rails/pull/13945/
 #

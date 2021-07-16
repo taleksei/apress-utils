@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Apress::Utils::Extensions::ActiveRecord::GroupAttributes
   attr_accessor :group_prefix
 

@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 module Apress
   module Utils
     module Extensions

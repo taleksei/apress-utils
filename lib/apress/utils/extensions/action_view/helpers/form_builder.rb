@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Apress::Utils::Extensions::ActionView::Helpers::FormBuilder
   extend ActiveSupport::Concern
 

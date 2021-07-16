@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ActiveSupport
   class << self
     delegate :time_precision, :time_precision, to: :'ActiveSupport::JSON::Encoding'
