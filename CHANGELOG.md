@@ -1,6 +1,12 @@
+# v2.9.0
+
+* 2021-07-20 [99a6f6c](../../commit/99a6f6c) - __(Andrew N. Shalaev)__ fix: use appropriate rspec-rails version 
+* 2021-07-16 [9038c64](../../commit/9038c64) - __(Andrew N. Shalaev)__ Release v2.9.0 
+* 2021-07-16 [0bf36de](../../commit/0bf36de) - __(Andrew N. Shalaev)__ feature: freeze string literals 
+* 2021-07-16 [066b36f](../../commit/066b36f) - __(Andrew N. Shalaev)__ feature: add ruby2.4 support 
+
 # v2.8.6
 
-* 2021-07-09 [721b391](../../commit/721b391) - __(Andrew N. Shalaev)__ Release v2.8.6 
 * 2021-07-09 [c08aab7](../../commit/c08aab7) - __(Andrew N. Shalaev)__ fix: include patch for formbuilder for error_message_on helper 
 https://jira.railsc.ru/browse/BPC-17628
 
