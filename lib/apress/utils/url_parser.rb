@@ -17,7 +17,7 @@ module Apress
         end
 
         def make_url(parts)
-          result = ''
+          result = ''.dup
           return result unless parts
 
           result << (parts[URL_SCHEME_INDEX] || '')

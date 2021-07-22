@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 module Apress::Utils::Extensions::ActionController
   module Rails30Rescue

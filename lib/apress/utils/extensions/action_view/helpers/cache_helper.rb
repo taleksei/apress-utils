@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 
 # Добавляем поддержку cache_if / cache_unless хелперов из Rails 4

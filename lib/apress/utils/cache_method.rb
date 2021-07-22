@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 # It’s like alias_method, but it’s cache_method!
 # Lets you cache the results of calling methods given their arguments.
