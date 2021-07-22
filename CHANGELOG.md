@@ -1,7 +1,12 @@
+# v2.9.1
+
+* 2021-07-22 [dd0a3f8](../../commit/dd0a3f8) - __(Igor Prudnikov)__ Release v.2.9.1 
+* 2021-07-22 [887740d](../../commit/887740d) - __(Igor Prudnikov)__ fix: fix frozen string modification 
+* 2021-07-22 [dd73cee](../../commit/dd73cee) - __(Igor Prudnikov)__ chore: remove encoding comments 
+
 # v2.9.0
 
 * 2021-07-20 [99a6f6c](../../commit/99a6f6c) - __(Andrew N. Shalaev)__ fix: use appropriate rspec-rails version 
-* 2021-07-16 [9038c64](../../commit/9038c64) - __(Andrew N. Shalaev)__ Release v2.9.0 
 * 2021-07-16 [0bf36de](../../commit/0bf36de) - __(Andrew N. Shalaev)__ feature: freeze string literals 
 * 2021-07-16 [066b36f](../../commit/066b36f) - __(Andrew N. Shalaev)__ feature: add ruby2.4 support 
 
