@@ -51,7 +51,9 @@ module ActionDispatch
   #
   # See docs on the FlashHash class for more details about the flash.
   class Flash
-    KEY = 'action_dispatch.request.flash_hash'.freeze
+    silence_warnings do
+      const_set :KEY, 'action_dispatch.request.flash_hash'
+    end
 
     class FlashNow #:nodoc:
       attr_accessor :flash
