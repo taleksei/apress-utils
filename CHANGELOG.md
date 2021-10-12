@@ -1,3 +1,8 @@
+# v2.9.2
+
+* 2021-10-11 [97b66cc](../../commit/97b66cc) - __(Andrew N. Shalaev)__ Release v2.9.2 
+* 2021-10-11 [08d02b1](../../commit/08d02b1) - __(Andrew N. Shalaev)__ fix: hide warnings about override constant Flash::KEY 
+
 # v2.9.1
 
 * 2021-07-22 [dd0a3f8](../../commit/dd0a3f8) - __(Igor Prudnikov)__ Release v.2.9.1 
