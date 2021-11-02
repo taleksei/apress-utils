@@ -1,6 +1,10 @@
+# v2.10.0
+
+* 2021-11-02 [b57a026](../../commit/b57a026) - __(Andrew N. Shalaev)__ Release v2.10.0 
+* 2021-11-02 [a0863b1](../../commit/a0863b1) - __(Andrew N. Shalaev)__ fix: remove danger and not worked code 
+
 # v2.9.2
 
-* 2021-10-11 [97b66cc](../../commit/97b66cc) - __(Andrew N. Shalaev)__ Release v2.9.2 
 * 2021-10-11 [08d02b1](../../commit/08d02b1) - __(Andrew N. Shalaev)__ fix: hide warnings about override constant Flash::KEY 
 
 # v2.9.1
