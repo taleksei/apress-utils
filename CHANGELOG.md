@@ -1,6 +1,14 @@
+# v2.10.1
+
+* 2022-03-15 [5077c96](../../commit/5077c96) - __(Gelani Geliskhanov)__ Release v2.10.1 
+Correct onsubmit attribute for form_for (rails 4.2)
+You do not need to do anything to connect to the project
+
+* 2022-03-15 [5e52602](../../commit/5e52602) - __(Gelani Geliskhanov)__ chore: lock rails gem 
+* 2022-03-15 [def9007](../../commit/def9007) - __(Gelani Geliskhanov)__ fix: correct form_for onsubmit for rails 4.2 
+
 # v2.10.0
 
-* 2021-11-02 [b57a026](../../commit/b57a026) - __(Andrew N. Shalaev)__ Release v2.10.0 
 * 2021-11-02 [a0863b1](../../commit/a0863b1) - __(Andrew N. Shalaev)__ fix: remove danger and not worked code 
 
 # v2.9.2
