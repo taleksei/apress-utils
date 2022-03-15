@@ -25,6 +25,7 @@ module Apress
       config.before_initialize do
         require cd + '/extensions/content_for_cache'
         require cd + '/extensions/action_view/helpers/form_tag_patch'
+        require cd + '/extensions/action_view/helpers/form_patch'
 
         if Rails.version < '5'
           ActionView::Helpers::FormBuilder.include(::Apress::Utils::Extensions::ActionView::Helpers::FormBuilder)
