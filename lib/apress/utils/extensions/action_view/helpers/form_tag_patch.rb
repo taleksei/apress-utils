@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# TODO: delete this extension after updating to rails 4.2
 module ActionView
   module Helpers
     module FormTagHelper
