@@ -1,6 +1,13 @@
+# v2.10.2
+
+* 2022-03-15 [2c244b4](../../commit/2c244b4) - __(Gelani Geliskhanov)__ Release v2.10.2 
+Correct rails version rules for rails 4.2
+You do not need to do anything to connect to the project
+
+* 2022-03-15 [5b91ab8](../../commit/5b91ab8) - __(Gelani Geliskhanov)__ fix: correct rails version rules 
+
 # v2.10.1
 
-* 2022-03-15 [5077c96](../../commit/5077c96) - __(Gelani Geliskhanov)__ Release v2.10.1 
 Correct onsubmit attribute for form_for (rails 4.2)
 You do not need to do anything to connect to the project
 
