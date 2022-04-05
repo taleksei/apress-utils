@@ -48,6 +48,7 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
 
         def reset_by_tag(tag)
           redis_store.delete_by_tags(tag)
+          old_redis_store.delete_by_tags(tag) unless old_redis_store.options[:namespace] == redis_store.options[:namespace]
           reset_local_store
         end
 
@@ -66,6 +67,13 @@ module Apress::Utils::Extensions::ActiveRecord::CachedQueries
           @redis_store ||= begin
             config = Rails.application.config
             config.respond_to?(:cached_query_store) && config.cached_query_store || Rails.cache
+          end
+        end
+
+        def old_redis_store
+          @old_redis_store ||= begin
+            config = Rails.application.config
+            config.respond_to?(:old_cached_query_store) && config.old_cached_query_store || Rails.cache
           end
         end
 
